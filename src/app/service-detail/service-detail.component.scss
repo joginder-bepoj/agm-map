@@ -1,0 +1,115 @@
+.map {
+    padding: 4px;
+    background: #fff;
+    border-radius: 0;
+    margin: 0px auto;
+    box-shadow: 0px 10px 23px -15px hsl(0deg 0% 0% / 30%);
+    border: 1px solid rgb(238, 238, 238);
+    position: relative;
+    agm-map {
+        height: calc(100vh - 15px);
+    }
+  }
+.service-info {
+  position: absolute;
+  left: 0;
+  top: 15px;
+  right: 0;
+  padding: 25px 20px;
+  background: rgba(255, 255, 255, 0.98);
+  max-width: 550px;
+  margin: auto;
+  z-index: 9;
+  box-shadow: 0px 5px 20px 5px rgb(0 0 0 / 50%);
+  border-radius: 5px;
+    h2 {
+      margin: 0;
+      font-size: 24px;
+    }
+    .action-buttons {
+      display: flex;
+      justify-content: space-between;
+      .btn {
+        display: block;
+        padding:10px 15px;
+        background: #bb2d3b;
+        color: #fff;
+        text-transform: uppercase;
+        text-align: center;
+        width: 50%;
+        border: none;
+        text-decoration: none;
+        font-weight: 500;
+        font-family: "Roboto", sans-serif;
+        cursor: pointer;
+        border-radius: 7px;
+        font-size: 17px;
+        &+.btn {
+          margin-left: 15px;
+          background: #198754;
+        }
+      }
+    }
+    .rating {
+      margin: 15px 0;
+      margin-bottom: 20px;
+      font-size: 24px;
+      .fa {
+        font-size: 22px;
+      }
+    }  
+    .status-info {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 30px;
+      font-size: 14px;
+      span {
+        text-align: center;
+        padding: 2px 8px;
+        display: block; 
+        font-weight: 500;
+        color: #5cb860;   
+        width: 100px;    
+        i {
+          height: 36px;
+          width: 36px;
+          border-radius: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border: 2px solid #5cb860;
+          font-style: normal;
+          margin: auto;
+          margin-bottom: 5px;
+          font-weight: 600;
+          font-size: 18px;
+          color: #5cb860;
+          position: relative;
+          z-index: 1;
+          background: #fff;
+          &::after{
+            content: "";
+            height: 2px;
+            position: absolute;
+            left:100%;
+            top: 50%;
+            width: 80px;
+            background: #5cb860;
+            transform: translate(0px, -50%);
+            z-index: -1;
+          }
+        }
+      }
+    }
+    .status-info span.active ~ span,
+    .status-info span.active ~ span i{
+      color: #999;
+      border-color: #999;
+    }
+    .status-info span.active ~ span i:after{
+      background: #999;
+    }
+    .status-info span:last-child i::after {
+      display: none;
+    }
+  }

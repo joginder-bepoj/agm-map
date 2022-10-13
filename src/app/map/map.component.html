@@ -1,0 +1,15 @@
+<section>
+    <div class="map">
+      <agm-map [latitude]="latitude" [longitude]="longitude" [zoom]="zoom">
+        <agm-marker 
+        [latitude]="latitude" 
+        [longitude]="longitude"  
+        [markerDraggable]="true"
+        (dragStart)="isActiveBtn = false; services = []"
+        (dragEnd)="isActiveBtn = true">
+      </agm-marker>
+      </agm-map>
+      <button *ngIf="isActiveBtn" (click)="getServices()" class="btn" type="button">Select Services</button>
+    </div>
+    <app-services [isLoading]="isLoading" [data]="services"></app-services>
+  </section>

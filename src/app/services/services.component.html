@@ -1,0 +1,46 @@
+<div class="table-wrapper">
+    <table>
+        <tr>
+            <th>
+                Sr. No.
+            </th>
+            <th>
+                Service Type
+            </th>
+            <th>
+                Service Provider
+            </th>
+            <th>
+                Rating
+            </th>
+            <th>
+                Action
+            </th>
+        </tr>
+        <tbody>
+            <tr *ngFor="let service of services; index as index">
+                <td>{{index+1}}.</td>
+                <td>{{service.service}}</td>
+                <td>{{service.provider.name}}</td>
+                <td>
+                    <div class="rating">
+                        <span class="fa fa-star" [ngClass]="{'active-star':isActive(service.rating, 1)}"></span>
+                        <span class="fa fa-star" [ngClass]="{'active-star':isActive(service.rating, 2)}"></span>
+                        <span class="fa fa-star" [ngClass]="{'active-star':isActive(service.rating, 3)}"></span>
+                        <span class="fa fa-star" [ngClass]="{'active-star':isActive(service.rating, 4)}"></span>
+                        <span class="fa fa-star" [ngClass]="{'active-star':isActive(service.rating, 5)}"></span>
+                    </div>
+                </td>
+                <td><button type="button" [routerLink]="['service',service.id]">Select</button></td>
+            </tr>
+            <tr *ngIf="services.length==0">
+                <td colspan="5" class="no-results">
+                    No results found
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="spinner" *ngIf="isLoading">
+        <span></span>
+    </div>
+</div>
